@@ -1,25 +1,19 @@
 import React from 'react';
 
-const Tabs = ({ setPanel }) => {
-  const setActivePanel = (e, name) => {
-    console.log(e, name);
-    e.target.classList.add('active');
-    setPanel(name);
-  };
-
+const Tabs = ({ panel, setPanel }) => {
   return (
     <div className="container tab-holder">
       <div
-        className="tab active"
+        className={'tab' + (panel === 'letters' ? ' active' : '')}
         data-section="letters"
-        onClick={(e) => setActivePanel(e, 'letters')}
+        onClick={() => setPanel('letters')}
       >
         Letters
       </div>
       <div
-        className="tab"
+        className={'tab' + (panel === 'numbers' ? ' active' : '')}
         data-section="numbers"
-        onClick={(e) => setActivePanel(e, 'numbers')}
+        onClick={() => setPanel('numbers')}
       >
         Numbers
       </div>
