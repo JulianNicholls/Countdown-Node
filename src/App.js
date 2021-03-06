@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import Header from './components/Header';
+import Tabs from './components/Tabs';
+import LetterForm from './components/LetterForm';
+import WordView from './components/WordView';
+
+const App = () => {
+  const [panel, setPanel] = useState('letters');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Tabs setPanel={setPanel} />
+      {panel === 'letters' ? (
+        <>
+          <LetterForm />
+          <WordView />
+        </>
+      ) : (
+        <h1>Numbers!</h1>
+      )}
     </div>
   );
-}
+};
 
 export default App;

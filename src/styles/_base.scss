@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background: $background-blue;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: $font-size-medium;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.container {
+  width: 1000px;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
