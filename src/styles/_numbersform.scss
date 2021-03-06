@@ -1,0 +1,33 @@
+form#numbers-form {
+  background: url('images/countdown.png') no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  padding: 420px 0 0 30px;
+
+  label {
+    font-size: $font-size-medium;
+    margin-right: 1em;
+  }
+  input#numbers, input#target {
+    background: rgba(255, 255, 255, 0.8);
+    font-size: $font-size-medium;
+    padding: 0.3em;
+    margin-right: 1rem;
+    width: 12em;
+  }
+
+  input#target {
+    width: 4em;
+  }
+}
+
+@media (max-width: 490px) {
+  input#numbers, input#target {
+    font-size: $font-size-small;
+    width: 9em;
+  }
+
+  label {
+    font-size: $font-size-small;
+  }
+}

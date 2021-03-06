@@ -26,7 +26,7 @@ const LetterForm = () => {
 
   return (
     <div className="container">
-      <form onSubmit={findWords}>
+      <form id="letters-form" onSubmit={findWords}>
         <input
           type="search"
           inputMode="search"
