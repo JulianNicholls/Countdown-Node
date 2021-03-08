@@ -219,12 +219,12 @@ function stringify_result(serialised, target) {
   output = output.substr(0, output.length - 2); // Strip final ', '
 
   const result = serialised[serialised.length - 1][0];
-  if (result !== target) output += `(off by ${Math.abs(result - target)})`;
+  if (result != target) output += ` (off by ${Math.abs(result - target)})`;
 
   return output;
 }
 
-exports.solve_numbers = (numbers, target, trickshot = false) => {
+exports.serialisedResult = (numbers, target, trickshot = false) => {
   numbers.sort();
   bestresult = [numbers[0], numbers[0]];
 
@@ -242,9 +242,14 @@ exports.solve_numbers = (numbers, target, trickshot = false) => {
     if (bestresult[0] === target) return target + ' = ' + target;
   }
 
-  const result_array = serialise_result(
+  return serialise_result(
     tidyup_result(_solve_numbers(numbers, target, trickshot))
   );
+};
 
-  return stringify_result(result_array, target);
+exports.solve_numbers = (numbers, target, trickshot = false) => {
+  return stringify_result(
+    exports.serialisedResult(numbers, target, trickshot),
+    target
+  );
 };

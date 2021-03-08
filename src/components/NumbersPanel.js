@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 
-const LetterForm = () => {
+const NumbersResultBox = ({ result }) => {
+  return (
+    <div className="result-box">
+      <div className="header">Method</div>
+    </div>
+  );
+};
+
+const NumbersPanel = () => {
   const [numbers, setNumbers] = useState('');
   const [target, setTarget] = useState('');
+  const [result, setResult] = useState([]);
 
   const handleChange = (e) => {
     let entry = e.target.value;
@@ -35,6 +44,7 @@ const LetterForm = () => {
           autoComplete="off"
           autoCorrect="off"
           autoFocus
+          placeholder="e.g. 1 7 3 4 8 25"
         />
 
         <label htmlFor="target">Target</label>
@@ -45,14 +55,15 @@ const LetterForm = () => {
           onChange={handleTarget}
           autoComplete="off"
           autoCorrect="off"
-          autoFocus
         />
         <button type="submit" className="big-button" disabled={true}>
           Countdown
         </button>
       </form>
+
+      <NumbersResultBox result={result} />
     </div>
   );
 };
 
-export default LetterForm;
+export default NumbersPanel;

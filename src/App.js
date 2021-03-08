@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Tabs from './components/Tabs';
 import LetterForm from './components/LetterForm';
-import NumbersForm from './components/NumbersForm';
+import NumbersPanel from './components/NumbersPanel';
 import WordView from './components/WordView';
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
           <WordView />
         </>
       ) : (
-        <NumbersForm />
+        <NumbersPanel />
       )}
     </div>
   );

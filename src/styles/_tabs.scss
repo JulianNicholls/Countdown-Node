@@ -3,7 +3,7 @@
   justify-content: flex-start;
   width: 1000px;
   background: $background-blue;
-  border-bottom: 1px solid $background-blue;
+  border-bottom: 1px solid white;
   margin-top: 0.5rem;
 
   .tab {
@@ -12,7 +12,6 @@
     color: white;
     font-size: 1.2rem;
     border: 1px solid white;
-    border-bottom-color: $background-blue;
     margin-right: -0.6rem;
     // border-top-left-radius: 0.7rem;
     border-top-right-radius: 0.7rem;
