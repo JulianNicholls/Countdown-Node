@@ -48,4 +48,15 @@ form#numbers-form {
     line-height: $font-size-largest;
     text-align: center;
   }
+
+  .rb-main {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  pre {
+    font-family: monospace;
+    font-size: $font-size-medium;
+    line-height: 1.3;
+  }
 }

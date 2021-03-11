@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { solve_numbers as solveNumbers } from './cd-numbers';
+import { serialisedResult as solveNumbers } from './cd-numbers';
 
 import ClientWordList from '../ClientWordList';
 
