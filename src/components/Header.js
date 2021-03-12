@@ -4,7 +4,7 @@ const Header = () => (
   <header>
     <div className="header-container">
       <a href="https://reallybigshoe.co.uk/index.html">
-        <img src="images/favicon-32x32.png" alt="" />
+        <img src="images/favicon-32x32.png" alt="Home" />
       </a>
       <a href="https://reallybigshoe.co.uk/index.html">Home</a>
       <a

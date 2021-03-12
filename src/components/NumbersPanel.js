@@ -98,6 +98,7 @@ const NumbersPanel = () => {
         />
 
         <button
+          id="solve-numbers"
           type="submit"
           className="big-button"
           onClick={solve}
