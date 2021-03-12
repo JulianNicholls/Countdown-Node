@@ -48,7 +48,7 @@ class Word {
   _deconstruct() {
     this.letterMap = new Map();
 
-    this.text.split('').forEach(char => {
+    [...this.text].forEach((char) => {
       const count = this.letterMap.get(char);
 
       this.letterMap.set(char, count + 1 || 1);
@@ -56,4 +56,4 @@ class Word {
   }
 }
 
-module.exports = Word;
+export default Word;
