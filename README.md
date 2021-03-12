@@ -1,6 +1,8 @@
 # Countdown Magician 4
 
-This is an update to my Countdown solver booted with Create-React-App.
+This is an update to my Countdown solver, rebooted with Create-React-App.
+
+The new part is the solver for the numbers round.
 
 This version runs [here](https://reallybigshoe.co.uk/countdown/index.html).
 
