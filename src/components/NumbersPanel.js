@@ -42,30 +42,32 @@ const NumbersPanel = () => {
   const { solveNumbers } = useCountdown();
 
   const handleChange = (e) => {
-    let entry = e.target.value;
+    const entry = e.target.value.trimStart();
 
-    entry = entry.trimStart();
-
-    if (/^(\d{1,3}\s*){0,6}$/.test(entry)) {
+    if ([...entry].every((char) => '0123456789,. '.includes(char))) {
       setNumbers(entry);
     }
   };
 
   const handleTarget = (e) => {
-    let entry = e.target.value;
-
-    entry = entry.trim();
+    const entry = e.target.value.trim();
 
     if (/^\d{0,3}$/.test(entry)) setTarget(entry);
   };
 
-  const enableSolve = () =>
-    /^(\d{1,3}\s+){5}\d{1,3}$/.test(numbers.trim()) && /^\d{3}$/.test(target);
+  const enableSolve = () => {
+    const spaced = numbers.replace(/[,.]\s*/g, ' ');
+
+    return (
+      /^(\d{1,3}\s+){5}\d{1,3}$/.test(spaced.trim()) && /^\d{3}$/.test(target)
+    );
+  };
 
   const solve = (e) => {
     e.preventDefault();
 
-    const numArray = numbers.split(/\s+/).map((num) => parseInt(num, 10));
+    const spaced = numbers.replace(/[,.]\s*/g, ' ');
+    const numArray = spaced.split(/\s+/).map((num) => parseInt(num, 10));
     const targetNum = parseInt(target, 10);
 
     setResult(solveNumbers(numArray, targetNum));
@@ -85,6 +87,7 @@ const NumbersPanel = () => {
           autoCorrect="off"
           autoFocus
           placeholder="e.g. 1 7 3 4 8 25"
+          title="Use spaces, commas, or dots to separate the numbers"
         />
 
         <label htmlFor="target">Target</label>
