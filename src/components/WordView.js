@@ -1,17 +1,17 @@
 import React from 'react';
 
 import WordBox from './WordBox';
-import { useWords } from '../context';
+import { useCountdown } from '../context';
 
 const WordView = () => {
-  const { foundWords } = useWords();
+  const { foundWords } = useCountdown();
 
-  const boxes = words => {
+  const boxes = (words) => {
     let currentLength = 0;
     let currentWords = [];
     let boxes = [];
 
-    words.forEach(word => {
+    words.forEach((word) => {
       if (word.length !== currentLength) {
         if (currentWords.length !== 0) {
           boxes.push(<WordBox key={currentLength} words={currentWords} />);

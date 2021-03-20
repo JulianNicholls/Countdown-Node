@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useWords } from '../context';
+import { useCountdown } from '../context';
 
 // Result looks like:
 // [
@@ -39,7 +39,7 @@ const NumbersPanel = () => {
   const [target, setTarget] = useState('');
   const [result, setResult] = useState([]);
 
-  const { solveNumbers } = useWords(); // I'll change that name next
+  const { solveNumbers } = useCountdown();
 
   const handleChange = (e) => {
     let entry = e.target.value;

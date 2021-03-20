@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import { WordsProvider } from './context';
+import { CountdownProvider } from './context';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <WordsProvider>
+    <CountdownProvider>
       <App />
-    </WordsProvider>
+    </CountdownProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

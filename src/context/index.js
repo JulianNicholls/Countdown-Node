@@ -3,9 +3,9 @@ import { serialisedResult as solveNumbers } from './cd-numbers';
 
 import ClientWordList from '../ClientWordList';
 
-const WordContext = React.createContext();
+const CountdownContext = React.createContext();
 
-export const WordsProvider = ({ children }) => {
+export const CountdownProvider = ({ children }) => {
   const [words, setWords] = useState([]);
   const [foundWords, setFoundWords] = useState([]);
 
@@ -25,11 +25,13 @@ export const WordsProvider = ({ children }) => {
     solveNumbers,
   };
 
-  return <WordContext.Provider value={state}>{children}</WordContext.Provider>;
+  return (
+    <CountdownContext.Provider value={state}>{children}</CountdownContext.Provider>
+  );
 };
 
-export const useWords = () => {
-  const context = useContext(WordContext);
+export const useCountdown = () => {
+  const context = useContext(CountdownContext);
 
   if (context === undefined)
     throw new Error('useWords() must be used within a WordsProvider');

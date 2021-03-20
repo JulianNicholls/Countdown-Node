@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { useWords } from '../context';
+import { useCountdown } from '../context';
 
 const LetterForm = () => {
   const [letters, setLetters] = useState('');
-  const { getWords } = useWords();
+  const { getWords } = useCountdown();
 
   const findWords = (event) => {
     event.preventDefault();
