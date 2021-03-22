@@ -17,7 +17,7 @@ const NumbersResult = ({ result }) => {
   const lines = result.map((section) => {
     const [total, op, ...values] = section;
 
-    return values.join(` ${op} `) + ` = ${total}\n`;
+    return values.join(` ${op !== '*' ? op : 'x'} `) + ` = ${total}\n`;
   });
 
   return <pre>{lines}</pre>;
