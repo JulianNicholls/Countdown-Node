@@ -1,6 +1,7 @@
-@import './constants';
-@import './base';
+@import 'common/colours';
+@import 'common/sizes';
 
+@import './base';
 @import './header';
 @import './tabs';
 @import './letterform';
