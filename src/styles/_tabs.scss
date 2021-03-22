@@ -1,13 +1,15 @@
+@use 'common/colours';
+
 .tab-holder {
   display: flex;
   justify-content: flex-start;
   width: 1000px;
-  background: $background-blue;
+  background: colours.$background-blue;
   border-bottom: 1px solid white;
   margin-top: 0.5rem;
 
   .tab {
-    background: $background-blue;
+    background: colours.$background-blue;
     padding: 0.3rem 1.2rem;
     color: white;
     font-size: 1.2rem;
@@ -20,7 +22,7 @@
 
   .tab.active {
     background: white;
-    color: $background-blue;
+    color: colours.$background-blue;
     font-weight: bold;
     z-index: 3;
   }

@@ -1,3 +1,6 @@
+@use 'common/colours';
+@use 'common/sizes';
+
 .wordview {
   display: grid;
   grid-gap: 10px;
@@ -9,15 +12,15 @@
 
 .wordview-title {
   color: white;
-  font-size: $font-size-largest;
+  font-size: sizes.$font-size-largest;
   margin: 20px 0;
   text-align: center;
 }
 
 .word-box {
-  border: 1px solid lighten($box-header, 20%);
-  color: $text-colour;
-  font-size: $font-size-small;
+  border: 1px solid lighten(colours.$box-header, 20%);
+  color: colours.$text-colour;
+  font-size: sizes.$font-size-small;
   padding: 0;
 
   p {
@@ -25,7 +28,7 @@
   }
 
   a {
-    color: $text-colour;
+    color: colours.$text-colour;
 
     &:hover {
       color: #ffc600; // WesBos' favourite
@@ -33,19 +36,19 @@
   }
 
   .header {
-    background: $box-header;
-    font-size: $font-size-medium;
-    height: $font-size-largest;
-    line-height: $font-size-largest;
+    background: colours.$box-header;
+    font-size: sizes.$font-size-medium;
+    height: sizes.$font-size-largest;
+    line-height: sizes.$font-size-largest;
     text-align: center;
   }
 
   #header-9 {
-    background: $header-9;
+    background: colours.$header-9;
   }
 
   #header-10, #header-11, #header-12 {
-    background: darken($header-9, 10%);
+    background: darken(colours.$header-9, 10%);
   }
 }
 
@@ -59,12 +62,12 @@
   }
 
   .word-box {
-    font-size: $font-size-smallest;
+    font-size: sizes.$font-size-smallest;
 
     .header {
-      font-size: $font-size-small;
-      height: $font-size-medium;
-      line-height: $font-size-medium;
+      font-size: sizes.$font-size-small;
+      height: sizes.$font-size-medium;
+      line-height: sizes.$font-size-medium;
     }
   }
 }
