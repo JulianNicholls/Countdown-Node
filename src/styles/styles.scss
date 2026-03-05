@@ -1,9 +1,9 @@
 // @import 'common/colours';
 // @import 'common/sizes';
 
-@import './base';
-@import './header';
-@import './tabs';
-@import './letterform';
-@import './numbersform';
-@import './wordview';
+@use 'base';
+@use 'header';
+@use 'tabs';
+@use 'letterform';
+@use 'numbersform';
+@use 'wordview';

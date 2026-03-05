@@ -1,3 +1,4 @@
+@use "sass:color";
 @use 'common/colours';
 @use 'common/sizes';
 
@@ -18,7 +19,7 @@
 }
 
 .word-box {
-  border: 1px solid lighten(colours.$box-header, 20%);
+  border: 1px solid color.adjust(colours.$box-header, $lightness: 20%);
   color: colours.$text-colour;
   font-size: sizes.$font-size-small;
   padding: 0;
@@ -48,7 +49,7 @@
   }
 
   #header-10, #header-11, #header-12 {
-    background: darken(colours.$header-9, 10%);
+    background: color.adjust(colours.$header-9, $lightness: -10%);
   }
 }
 
